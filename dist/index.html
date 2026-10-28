@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3ea">
+  <meta name="description" content="A little hamster. A new course with every settled Squeekchain round. Jump, collect seeds, and chase your personal best in this community arcade game.">
+  <title>Squeek Sprint — One tiny hamster. One big run.</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./game.mjs"></script>
+</head>
+<body>
+  <header class="site-header wrap">
+    <a class="brand" href="./" aria-label="Squeek Sprint home"><span class="brand-icon" aria-hidden="true">✳</span><span>SQUEEK<span class="brand-thin">SPRINT</span></span></a>
+    <nav aria-label="Main navigation"><a href="#how-it-works">How it works <span>↗</span></a><a href="https://docs.squeekchain.com/" target="_blank" rel="noopener noreferrer">Squeekchain docs <span>↗</span></a></nav>
+  </header>
+  <main class="wrap">
+    <section class="intro">
+      <div><p class="eyebrow"><span class="tiny-square"></span> A COMMUNITY ARCADE EXPERIMENT</p><h1>Small hamster.<br>Big <em>sprint.</em></h1><p class="intro-copy">A tiny runner powered by Squeekchain data. <br>Jump the obstacles. Grab the seeds. Go a little further.</p></div>
+      <div class="round-stamp"><span class="stamp-label">YOUR NEXT CHALLENGE</span><span id="round-number">PRACTICE</span><span id="round-caption">Fetching the latest settled round…</span><div class="stamp-rule"></div><span>60 seconds. Three chances.<br>One very determined hamster.</span></div>
+    </section>
+    <section class="arcade" aria-label="Squeek Sprint game">
+      <div class="arcade-bar"><div class="game-label"><span class="status-dot" id="data-dot"></span><span id="game-mode">PRACTICE RUN</span></div><div class="best-label">LOCAL BEST <strong id="best-score">0000</strong></div></div>
+      <div class="playfield" id="playfield">
+        <canvas id="game" width="1080" height="420" aria-label="Hamster runner. Press Space, Arrow Up, or tap Jump to jump. Press P to pause."></canvas>
+        <div class="hud" id="hud" hidden><span id="hearts" aria-label="3 lives">♥ ♥ ♥</span><span><b id="score">0000</b> <small>PTS</small></span><span id="timer">60s</span></div>
+        <div class="game-overlay" id="overlay"><div class="overlay-card"><span class="eyebrow light" id="overlay-kicker">READY WHEN YOU ARE</span><h2 id="overlay-title">Let's make<br>a little trouble.</h2><p id="overlay-copy">A 60-second dash through the Squeekverse.</p><button class="button primary" id="play-button">Let's sprint <span>→</span></button><p class="key-hint"><kbd>SPACE</kbd> or tap to jump</p></div></div>
+        <div class="track-progress" aria-label="Run progress"><div id="progress-fill"></div></div>
+      </div>
+      <div class="controls-row"><span><kbd>SPACE</kbd> jump <span class="control-divider">/</span> <kbd>P</kbd> pause</span><div><button class="text-button" id="pause-button" disabled>Pause</button><button class="touch-jump" id="jump-button" aria-label="Jump">Jump ↑</button></div><span class="arcade-note">Collect seeds. Keep your three hearts.</span></div>
+    </section>
+    <section class="under-game">
+      <div class="chain-card"><div class="card-heading"><span class="eyebrow">A LITTLE MORE THAN A HIGH SCORE</span><span class="network-pill">SEPOLIA</span></div><h2>Real rounds. New runs.</h2><p>Each settled Squeekchain round creates a repeatable course. Replay the same round and the obstacles stay in the same places.</p><div class="chain-stats"><div><span>SQUEEK BLOCK</span><strong id="block-height">—</strong></div><div><span>SETTLED ROUND</span><strong id="settled-round">—</strong></div><div><span>SEED CODE</span><strong id="seed-code">PRACTICE</strong></div></div><div class="source-note"><span id="source-status" role="status">Connecting to the official public API…</span><button class="text-button" id="refresh-button">Refresh ↻</button></div><details><summary>Where does this course come from?</summary><p id="provenance">Practice uses a fixed local seed while the public API is unavailable.</p><p>Official API data is indexed behind the Ethereum chain tip. Scores are game points saved on this device; playing does not mint SQK or earn a whitelist badge automatically.</p><a id="core-link" href="https://docs.squeekchain.com/developers/api/" target="_blank" rel="noopener noreferrer">API documentation ↗</a><span> · </span><a id="tx-link" href="https://docs.squeekchain.com/developers/api/" target="_blank" rel="noopener noreferrer">Source details ↗</a></details></div>
+      <div class="run-card"><span class="eyebrow">YOUR LAST SPRINT</span><div id="last-empty"><span class="run-mark" aria-hidden="true">↗</span><h2>Everybody starts <br>with a small step.</h2><p>Finish a run to save your score here.<br>Your hamster believes in you.</p></div><div id="last-result" hidden><strong class="result-number" id="result-score">0</strong><span class="result-label">POINTS</span><p id="result-detail"></p><button class="button secondary" id="copy-button">Copy result ↗</button><p id="copy-status" role="status"></p></div></div>
+    </section>
+    <section class="how" id="how-it-works"><div class="how-intro"><span class="eyebrow">THE SHORT VERSION</span><h2>Less reading. <br>More squeeking.</h2></div><ol><li><span class="step-no">01</span><div><h3>Find your rhythm.</h3><p>Space, ↑ or the Jump button. Clear rocks and cacti with one well-timed leap.</p></div></li><li><span class="step-no">02</span><div><h3>Take the scenic route.</h3><p>Stay in the run for 10 points a second. Every sunflower seed adds another 50.</p></div></li><li><span class="step-no">03</span><div><h3>Give it another go.</h3><p>Three hearts, one minute. Your best is stored per course, right on this device.</p></div></li></ol></section>
+  </main>
+  <footer class="wrap"><span class="brand footer-brand">✳ SQUEEK SPRINT</span><p>Made for the Squeekchain community. Independent & unofficial.</p><a href="https://api.squeekchain.com/v1/core" target="_blank" rel="noopener noreferrer">Built with Squeekchain data ↗</a></footer>
+</body>
+</html>
+

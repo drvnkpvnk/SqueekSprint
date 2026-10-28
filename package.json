@@ -1,0 +1,9 @@
+{
+  "name": "squeek-sprint",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A community hamster runner with courses seeded by confirmed Squeekchain Sepolia data.",
+  "engines": { "node": ">=22" },
+  "scripts": { "dev": "node serve.mjs", "start": "node serve.mjs", "test": "node --test test/*.test.mjs" }
+}
